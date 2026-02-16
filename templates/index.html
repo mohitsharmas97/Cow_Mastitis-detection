@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Cow Mastitis Detection{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <h1 class="display-3 fw-bold mb-4 text-white">
+                    Cow Mastitis Detection
+                </h1>
+                <p class="lead text-white-75 mb-4">
+                    Advanced AI-powered system for early detection and classification of cow mastitis using deep
+                    learning technology.
+                </p>
+                <div class="d-flex gap-3">
+                    {% if not session.get('user_id') %}
+                    <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-4">
+                        <i class="bi bi-person-plus me-2"></i>Get Started
+                    </a>
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg px-4">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg px-4">
+                        <i class="bi bi-speedometer2 me-2"></i>Go to Dashboard
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <div class="feature-icon-large">
+                    <i class="bi bi-clipboard2-pulse-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container my-5 py-5">
+    <div class="row text-center mb-5">
+        <div class="col-lg-8 mx-auto">
+            <h2 class="display-5 fw-bold mb-3">Powerful Features</h2>
+            <p class="lead text-muted">
+                Our system leverages YOLOv5 deep learning model to provide accurate and reliable mastitis detection
+            </p>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-image-fill"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Image Analysis</h5>
+                <p class="text-muted small">
+                    Upload cow udder images for instant AI-powered analysis and detection
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-camera-video-fill"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Video Processing</h5>
+                <p class="text-muted small">
+                    Analyze video footage frame-by-frame for comprehensive detection
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-bar-chart-fill"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Severity Classification</h5>
+                <p class="text-muted small">
+                    4-level severity classification: Healthy, Low, Moderate, and High
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-file-medical-fill"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Treatment Recommendations</h5>
+                <p class="text-muted small">
+                    Get severity-specific treatment guidelines and precautionary measures
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-percent"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Confidence Scores</h5>
+                <p class="text-muted small">
+                    View detection accuracy percentage for each analysis
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-bounding-box"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Annotated Results</h5>
+                <p class="text-muted small">
+                    Download images/videos with highlighted detection regions
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-clock-history"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Detection History</h5>
+                <p class="text-muted small">
+                    Track all your detections with timestamps and reports
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+            <div class="feature-card h-100">
+                <div class="feature-icon">
+                    <i class="bi bi-shield-check"></i>
+                </div>
+                <h5 class="mt-3 mb-2">Secure & Private</h5>
+                <p class="text-muted small">
+                    User authentication and secure data storage for your records
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works Section -->
+<div class="bg-light py-5">
+    <div class="container">
+        <div class="row text-center mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="display-5 fw-bold mb-3">How It Works</h2>
+                <p class="lead text-muted">
+                    Simple 3-step process to detect mastitis
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="step-number">1</div>
+                    <h5 class="mt-3 mb-2">Upload Media</h5>
+                    <p class="text-muted">
+                        Upload cow udder images or videos in supported formats (PNG, JPG, JPEG, MP4, AVI, MOV)
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="step-number">2</div>
+                    <h5 class="mt-3 mb-2">AI Analysis</h5>
+                    <p class="text-muted">
+                        Our YOLOv5 model analyzes the media and detects mastitis severity levels with high accuracy
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="text-center">
+                    <div class="step-number">3</div>
+                    <h5 class="mt-3 mb-2">Get Results</h5>
+                    <p class="text-muted">
+                        View annotated results, confidence scores, and receive treatment recommendations
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+{% if not session.get('user_id') %}
+<div class="container my-5 py-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Get Started?</h2>
+            <p class="lead text-muted mb-4">
+                Join now and start detecting mastitis with AI technology
+            </p>
+            <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg px-5">
+                <i class="bi bi-person-plus me-2"></i>Create Free Account
+            </a>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

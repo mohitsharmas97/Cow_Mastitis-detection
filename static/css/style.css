@@ -1,0 +1,375 @@
+/* ================================================
+   Cow Mastitis Detection System - Custom Styles
+   ================================================ */
+
+/* === Global Styles === */
+:root {
+    --color-healthy: #10B981;
+    --color-low: #F59E0B;
+    --color-moderate: #EF4444;
+    --color-high: #DC2626;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* === Navigation === */
+.navbar.bg-gradient {
+    background: var(--primary-gradient) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* === Hero Section === */
+.hero-section {
+    background: var(--primary-gradient);
+    min-height: 600px;
+    padding: 80px 0;
+}
+
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.feature-icon-large {
+    font-size: 15rem;
+    color: rgba(255, 255, 255, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* === Cards === */
+.card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* === Feature Cards === */
+.feature-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: #667eea;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+/* === Step Numbers === */
+.step-number {
+    width: 80px;
+    height: 80px;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* === Upload Area === */
+.upload-area {
+    border: 3px dashed #dee2e6;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.upload-area:hover {
+    border-color: #667eea;
+    background-color: #f0f1ff;
+}
+
+.upload-area.drag-over {
+    border-color: #667eea;
+    background-color: #e8eaff;
+    transform: scale(1.02);
+}
+
+/* === Severity Badges === */
+.badge.severity-mastitisno,
+.severity-mastitisno {
+    background-color: var(--color-healthy) !important;
+    color: white !important;
+}
+
+.badge.severity-mastitislow,
+.severity-mastitislow {
+    background-color: var(--color-low) !important;
+    color: white !important;
+}
+
+.badge.severity-mastitismoderate,
+.severity-mastitismoderate {
+    background-color: var(--color-moderate) !important;
+    color: white !important;
+}
+
+.badge.severity-mastitishigh,
+.severity-mastitishigh {
+    background-color: var(--color-high) !important;
+    color: white !important;
+}
+
+/* === Progress Bars === */
+.progress {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar.severity-mastitisno {
+    background-color: var(--color-healthy) !important;
+}
+
+.progress-bar.severity-mastitislow {
+    background-color: var(--color-low) !important;
+}
+
+.progress-bar.severity-mastitismoderate {
+    background-color: var(--color-moderate) !important;
+}
+
+.progress-bar.severity-mastitishigh {
+    background-color: var(--color-high) !important;
+}
+
+/* === Buttons === */
+.btn {
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* === Table === */
+.table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* === Footer === */
+.footer {
+    background: #1a1a1a;
+    margin-top: 5rem;
+}
+
+/* === Alerts === */
+.alert {
+    border-radius: 8px;
+    border: none;
+}
+
+/* === Forms === */
+.form-control, .form-select {
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15);
+}
+
+/* === Loading Spinner === */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* === Recommendations Display === */
+#recommendationsContent h4 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+#recommendationsContent h5 {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+#recommendationsContent ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#recommendationsContent li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+#recommendationsContent li:before {
+    content: "•";
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+}
+
+/* === Modal === */
+.modal-content {
+    border-radius: 12px;
+    border: none;
+}
+
+.modal-header {
+    background-color: #f8f9fa;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 0;
+    }
+    
+    .feature-icon-large {
+        font-size: 8rem;
+    }
+    
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    
+    .display-5 {
+        font-size: 2rem;
+    }
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* === Utility Classes === */
+.text-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
