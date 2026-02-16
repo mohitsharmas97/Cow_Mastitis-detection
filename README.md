@@ -13,25 +13,25 @@
 
 ---
 
-## 🌟 Features
+## Features
 
-- **🖼️ Image Analysis**: Upload cow udder images for instant AI-powered detection
-- **🎥 Video Processing**: Analyze videos frame-by-frame for comprehensive detection  
-- **📊 4-Level Severity Classification**:
-  - ✅ **Mastitis-No** (Healthy)
-  - ⚠️ **Mastitis-Low** (Mild)
-  - ⚠️ **Mastitis-Moderate** (Moderate)
-  - 🚨 **Mastitis-High** (Severe)
-- **💊 Treatment Recommendations**: Severity-specific treatment guidelines
-- **📈 Confidence Scores**: Detection accuracy percentage for each analysis
-- **🎯 Annotated Results**: Download images/videos with bounding boxes
-- **📜 Detection History**: Track all detections with timestamps
-- **🔒 Secure Authentication**: User registration and login system
-- **📱 Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Image Analysis**: Upload cow udder images for instant AI-powered detection
+- **Video Processing**: Analyze videos frame-by-frame for comprehensive detection  
+- **4-Level Severity Classification**:
+  - **Mastitis-No** (Healthy)
+  - **Mastitis-Low** (Mild)
+  - **Mastitis-Moderate** (Moderate)
+  - **Mastitis-High** (Severe)
+- **Treatment Recommendations**: Severity-specific treatment guidelines
+- **Confidence Scores**: Detection accuracy percentage for each analysis
+- **Annotated Results**: Download images/videos with bounding boxes
+- **Detection History**: Track all detections with timestamps
+- **Secure Authentication**: User registration and login system
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 cow_mastitis/
@@ -63,7 +63,7 @@ cow_mastitis/
 
 ---
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
@@ -118,7 +118,7 @@ The application will start on `http://localhost:5000`
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### 1. **Register an Account**
    - Navigate to `http://localhost:5000`
@@ -155,14 +155,14 @@ The application will start on `http://localhost:5000`
 
 ---
 
-## 🎯 Detection Severity Levels
+##  Detection Severity Levels
 
 | Level | Description | Class Mapping | Action Required |
 |-------|-------------|---------------|-----------------|
-| **Mastitis-No** 🟢 | Healthy, no mastitis detected | `udder_normal`, `thermal_udder_normal`, `thermal_healthy_cow` | Continue routine monitoring |
-| **Mastitis-Low** 🟡 | Mild mastitis, early intervention | `thermal_suspected_cow` | Monitor closely, preventive measures |
-| **Mastitis-Moderate** 🟠 | Moderate infection | `mastitis_infected_udder` (confidence < 0.7) | **Veterinary consultation within 24 hours** |
-| **Mastitis-High** 🔴 | Severe infection | `mastitis_infected_udder` (confidence ≥ 0.7), `thermal_udder_mastitis` | **🚨 URGENT: Immediate veterinary care** |
+| **Mastitis-No** | Healthy, no mastitis detected | `udder_normal`, `thermal_udder_normal`, `thermal_healthy_cow` | Continue routine monitoring |
+| **Mastitis-Low** | Mild mastitis, early intervention | `thermal_suspected_cow` | Monitor closely, preventive measures |
+| **Mastitis-Moderate** | Moderate infection | `mastitis_infected_udder` (confidence < 0.7) | **Veterinary consultation within 24 hours** |
+| **Mastitis-High** | Severe infection | `mastitis_infected_udder` (confidence ≥ 0.7), `thermal_udder_mastitis` | **🚨 URGENT: Immediate veterinary care** |
 
 ---
 
@@ -184,7 +184,7 @@ HIGH_SEVERITY_CONFIDENCE = 0.7  # For infected udder classification
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Backend**: Flask (Python web framework)
 - **Database**: SQLite (lightweight, serverless)
@@ -200,7 +200,7 @@ HIGH_SEVERITY_CONFIDENCE = 0.7  # For infected udder classification
 
 ---
 
-## 📊 Model Information
+## Model Information
 
 - **Architecture**: YOLOv5 (You Only Look Once)
 - **Classes**: 8 detection classes
@@ -212,7 +212,7 @@ HIGH_SEVERITY_CONFIDENCE = 0.7  # For infected udder classification
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Model Loading Error
 **Problem**: "Error loading model"
@@ -244,7 +244,7 @@ app.run(debug=True, host='0.0.0.0', port=5001)  # Use different port
 
 ---
 
-## 📝 API Endpoints
+## API Endpoints
 
 | Endpoint | Method | Description | Auth Required |
 |----------|--------|-------------|---------------|
@@ -260,7 +260,7 @@ app.run(debug=True, host='0.0.0.0', port=5001)  # Use different port
 
 ---
 
-## 🔒 Security Features
+## Security Features
 
 - **Password Hashing**: Werkzeug SHA-256 hashing
 - **Session Management**: Flask secure sessions
@@ -270,70 +270,3 @@ app.run(debug=True, host='0.0.0.0', port=5001)  # Use different port
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## 👨‍💻 Development
-
-### Run in Debug Mode
-
-```bash
-# Set DEBUG=True in config.py
-python app.py
-```
-
-### Database Schema
-
-**Users Table**:
-```sql
-CREATE TABLE users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE NOT NULL,
-    email TEXT UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-```
-
-**Detections Table**:
-```sql
-CREATE TABLE detections (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id INTEGER NOT NULL,
-    filename TEXT NOT NULL,
-    media_type TEXT NOT NULL,
-    severity TEXT NOT NULL,
-    confidence REAL NOT NULL,
-    detection_count INTEGER DEFAULT 0,
-    recommendations TEXT,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users (id)
-);
-```
-
----
-
-## 📞 Support
-
-For issues, questions, or feature requests, please create an issue in the repository.
-
----
-
-## 🙏 Acknowledgments
-
-- **Ultralytics** for YOLOv5 framework
-- **Bootstrap** for responsive design components
-- **Flask** for the excellent web framework
-
----
-
-<div align="center">
-
-**Made with ❤️ for healthier cattle**
-
-🐄 Cow Mastitis Detection System © 2024
-
-</div>
