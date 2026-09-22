@@ -1,4 +1,7 @@
 # Cow Mastitis Detection System
+<img width="1901" height="923" alt="image" src="https://github.com/user-attachments/assets/d8b7fa42-505a-4721-a4e8-bcb9c78f67c2" />
+
+<img width="1783" height="892" alt="image" src="https://github.com/user-attachments/assets/b5dd676e-1494-43bf-bd27-304c0e9b3015" />
 
 <div align="center">
 
